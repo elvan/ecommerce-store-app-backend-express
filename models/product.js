@@ -72,7 +72,7 @@ const productSchema = new mongoose.Schema(
       {
         public_id: {
           type: String,
-          required: true,
+          // required: true,
         },
         url: {
           type: String,
@@ -80,18 +80,18 @@ const productSchema = new mongoose.Schema(
         },
       },
     ],
-    admin: {
-      type: String,
-      required: [true, 'Product admin is required'],
-      trim: true,
-      minlength: [2, 'Product admin must be at least 2 characters long'],
-      maxlength: [50, 'Product admin can not be longer than 50 characters'],
-    },
+    // admin: {
+    //   type: String,
+    //   required: [true, 'Product admin is required'],
+    //   trim: true,
+    //   minlength: [2, 'Product admin must be at least 2 characters long'],
+    //   maxlength: [50, 'Product admin can not be longer than 50 characters'],
+    // },
     // admin: {
     //   type: mongoose.Schema.Types.ObjectId,
     //   required: true,
     // },
-    rating: {
+    averageRatings: {
       type: Number,
       default: 0,
       min: [0, 'Product rating must be greater or equal than 0'],
