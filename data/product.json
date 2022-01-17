@@ -1,17 +1,138 @@
-{
-  "name": "Small Wooden Crate",
-  "price": "99000",
-  "description": "Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.",
-  "brand": "Seller One Inc.",
-  "category": "Electronics",
-  "quantityInStock": 9,
-  "averageRatings": 4.8,
-  "numOfReviews": 19,
-  "reviews": [],
-  "images": [
-    {
-      "public_id": "",
-      "url": "https://images.unsplash.com/photo-1521090029433-afd0d68460f4?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=450&ixid=MnwxfDB8MXxyYW5kb218MHx8aG90ZWx8fHx8fHwxNjQxMjgzNzU2&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800"
-    }
-  ]
-}
+[
+  {
+    "name": "Accessories Bag",
+    "price": "999000",
+    "description": "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada.",
+    "brand": "234Bags",
+    "category": "Outdoors",
+    "quantityInStock": 9,
+    "averageRatings": 4.8,
+    "numOfReviews": 19,
+    "reviews": [],
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/m9qgzkrq/image/upload/v1632015639/samples/ecommerce/accessories-bag.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Leather Bag Gray",
+    "price": "899000",
+    "description": "Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.",
+    "brand": "234Bags",
+    "category": "Outdoors",
+    "quantityInStock": 8,
+    "averageRatings": 4.9,
+    "numOfReviews": 5,
+    "reviews": [],
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/m9qgzkrq/image/upload/v1632015638/samples/ecommerce/leather-bag-gray.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Analouge Classic Watch",
+    "price": "3999000",
+    "description": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+    "brand": "345Watches",
+    "category": "Jewelery",
+    "quantityInStock": 3,
+    "averageRatings": 4.6,
+    "numOfReviews": 8,
+    "reviews": [],
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/m9qgzkrq/image/upload/v1632015630/samples/ecommerce/analog-classic.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Steering Wheel",
+    "price": "1999000",
+    "description": "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh.",
+    "brand": "Seller One Inc.",
+    "category": "Automotive",
+    "quantityInStock": 6,
+    "averageRatings": 4.7,
+    "numOfReviews": 7,
+    "reviews": [],
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/m9qgzkrq/image/upload/v1632015637/samples/ecommerce/car-interior-design.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Spices",
+    "price": "25000",
+    "description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+    "brand": "123Groceries",
+    "category": "Grocery",
+    "quantityInStock": 6,
+    "averageRatings": 4.7,
+    "numOfReviews": 7,
+    "reviews": [],
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/m9qgzkrq/image/upload/v1632015639/samples/food/spices.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Pot Mussels",
+    "price": "75000",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui posuere blandit.",
+    "brand": "123Groceries",
+    "category": "Grocery",
+    "quantityInStock": 6,
+    "averageRatings": 4.7,
+    "numOfReviews": 7,
+    "reviews": [],
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/m9qgzkrq/image/upload/v1632015632/samples/food/pot-mussels.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Fish Vegetables",
+    "price": "89000",
+    "description": "Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "brand": "Foodie One",
+    "category": "Grocery",
+    "quantityInStock": 6,
+    "averageRatings": 4.7,
+    "numOfReviews": 7,
+    "reviews": [],
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/m9qgzkrq/image/upload/v1632015631/samples/food/fish-vegetables.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Dessert",
+    "price": "149000",
+    "description": "Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    "brand": "Foodie One",
+    "category": "Grocery",
+    "quantityInStock": 6,
+    "averageRatings": 4.7,
+    "numOfReviews": 7,
+    "reviews": [],
+    "images": [
+      {
+        "public_id": "",
+        "url": "https://res.cloudinary.com/m9qgzkrq/image/upload/v1632015630/samples/food/dessert.jpg"
+      }
+    ]
+  }
+]

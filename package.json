@@ -7,7 +7,8 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "SET NODE_ENV=development& nodemon server.js",
-    "prod": "SET NODE_ENV=production& nodemon server.js"
+    "prod": "SET NODE_ENV=production& nodemon server.js",
+    "seeder": "node data/seeder.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "mongoose": "^5.13.14"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.3",
     "@types/express": "^4.17.13",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^17.0.9",
