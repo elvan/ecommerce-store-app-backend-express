@@ -1,9 +1,13 @@
 const Product = require('../models/product');
 
-exports.fetchAllProducts = (req, res, next) => {
+exports.fetchAllProducts = async (req, res, next) => {
+  const products = await Product.find();
+
   res.status(200).json({
     success: true,
-    message: 'Products will be displayed through this endpoint',
+    message: 'Products fetched successfully',
+    results: products.length,
+    products: products,
   });
 };
 

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 const faker = require('@faker-js/faker');
 const dotenv = require('dotenv');
 
