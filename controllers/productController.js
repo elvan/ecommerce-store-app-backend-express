@@ -5,6 +5,10 @@ const AppError = require('../helpers/AppError');
 exports.fetchAllProducts = catchAsync(async (req, res, next) => {
   const products = await Product.find();
 
+  if (!products) {
+    return next(new AppError('No products found', 404));
+  }
+
   res.status(200).json({
     success: true,
     message: 'Products fetched successfully',
@@ -17,10 +21,7 @@ exports.createProduct = catchAsync(async (req, res, next) => {
   const product = await Product.create(req.body);
 
   if (!product) {
-    return res.status(400).json({
-      success: false,
-      message: 'Product could not be created',
-    });
+    return next(new AppError('Product could not be created', 400));
   }
 
   res.status(201).json({
@@ -51,10 +52,7 @@ exports.updateProduct = catchAsync(async (req, res, next) => {
   });
 
   if (!product) {
-    return res.status(404).json({
-      success: false,
-      message: 'Failed to find product',
-    });
+    return next(new AppError('Failed to find product', 404));
   }
 
   res.status(200).json({
@@ -68,10 +66,7 @@ exports.deleteProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
 
   if (!product) {
-    return res.status(404).json({
-      success: false,
-      message: 'Failed to find product',
-    });
+    return next(new AppError('Failed to find product', 404));
   }
 
   product.deleteOne();
