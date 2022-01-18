@@ -4,9 +4,13 @@ const AppError = require('../helpers/AppError');
 const ApiFeatures = require('../helpers/ApiFeatures');
 
 exports.fetchAllProducts = catchAsync(async (req, res, next) => {
+  const limit = req.query.limit;
+  const pageSize = !limit || limit * 1 > 12 ? 12 : limit;
+
   const apiFeatures = new ApiFeatures(Product.find(), req.query)
     .search()
-    .filter();
+    .filter()
+    .pagination(pageSize);
 
   const products = await apiFeatures.mongooseQuery;
 
