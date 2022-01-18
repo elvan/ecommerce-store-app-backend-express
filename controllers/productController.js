@@ -1,9 +1,12 @@
 const catchAsync = require('../helpers/catchAsync');
 const Product = require('../models/product');
 const AppError = require('../helpers/AppError');
+const ApiFeatures = require('../helpers/ApiFeatures');
 
 exports.fetchAllProducts = catchAsync(async (req, res, next) => {
-  const products = await Product.find();
+  const apiFeatures = new ApiFeatures(Product.find(), req.query).search();
+
+  const products = await apiFeatures.mongooseQuery;
 
   if (!products) {
     return next(new AppError('No products found', 404));
