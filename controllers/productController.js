@@ -4,11 +4,13 @@ const AppError = require('../helpers/AppError');
 const ApiFeatures = require('../helpers/ApiFeatures');
 
 exports.fetchAllProducts = catchAsync(async (req, res, next) => {
-  const apiFeatures = new ApiFeatures(Product.find(), req.query).search();
+  const apiFeatures = new ApiFeatures(Product.find(), req.query)
+    .search()
+    .filter();
 
   const products = await apiFeatures.mongooseQuery;
 
-  if (!products) {
+  if (products.length === 0) {
     return next(new AppError('No products found', 404));
   }
 
