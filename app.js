@@ -1,7 +1,10 @@
 const express = require('express');
 
+const enableCors = require('./middleware/enableCors');
+
 const app = express();
 
+app.use(enableCors);
 app.use(express.json());
 
 // Import all the routers
