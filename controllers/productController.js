@@ -1,8 +1,8 @@
+const catchAsync = require('../helpers/catchAsync');
 const Product = require('../models/product');
-
 const AppError = require('../helpers/AppError');
 
-exports.fetchAllProducts = async (req, res, next) => {
+exports.fetchAllProducts = catchAsync(async (req, res, next) => {
   const products = await Product.find();
 
   res.status(200).json({
@@ -11,9 +11,9 @@ exports.fetchAllProducts = async (req, res, next) => {
     results: products.length,
     products: products,
   });
-};
+});
 
-exports.createProduct = async (req, res, next) => {
+exports.createProduct = catchAsync(async (req, res, next) => {
   const product = await Product.create(req.body);
 
   if (!product) {
@@ -28,9 +28,9 @@ exports.createProduct = async (req, res, next) => {
     message: 'Product created successfully',
     product: product,
   });
-};
+});
 
-exports.fetchProduct = async (req, res, next) => {
+exports.fetchProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
 
   if (!product) {
@@ -42,9 +42,9 @@ exports.fetchProduct = async (req, res, next) => {
     message: 'Product fetched successfully',
     product: product,
   });
-};
+});
 
-exports.updateProduct = async (req, res, next) => {
+exports.updateProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -62,9 +62,9 @@ exports.updateProduct = async (req, res, next) => {
     message: 'Product updated successfully',
     product: product,
   });
-};
+});
 
-exports.deleteProduct = async (req, res, next) => {
+exports.deleteProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
 
   if (!product) {
@@ -80,4 +80,4 @@ exports.deleteProduct = async (req, res, next) => {
     success: true,
     message: 'Product deleted successfully',
   });
-};
+});
