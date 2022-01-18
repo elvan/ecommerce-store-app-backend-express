@@ -4,6 +4,14 @@ const app = require('./app');
 
 const connectToDatabase = require('./config/database');
 
+process.on('uncaughtException', (err) => {
+  console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  console.log(`Error name: ${err.name}`);
+  console.log(`Error message: ${err.message}`);
+
+  process.exit(1);
+});
+
 // Load environment variables from .env file
 dotenv.config();
 
@@ -19,9 +27,9 @@ const server = app.listen(port, () => {
 });
 
 process.on('unhandledRejection', (err) => {
+  console.log('UNHANDLED REJECTION! 💥 Shutting down...');
   console.log(`Error name: ${err.name}`);
   console.log(`Error message: ${err.message}`);
-  console.log('Unhandled Rejection. Shutting down...');
 
   // Close server and exit process
   server.close(() => {
