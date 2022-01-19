@@ -18,7 +18,7 @@ const seedProducts = async () => {
 
     const products = [];
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 100; i++) {
       products.push({
         name: faker.commerce.productName(),
         price: faker.commerce.price() * 1000,

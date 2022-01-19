@@ -7,6 +7,8 @@ exports.fetchAllProducts = catchAsync(async (req, res, next) => {
   const limit = req.query.limit;
   const pageSize = !limit || limit * 1 > 12 ? 12 : limit;
 
+  const totalCount = await Product.countDocuments();
+
   const apiFeatures = new ApiFeatures(Product.find(), req.query)
     .search()
     .filter()
@@ -21,7 +23,8 @@ exports.fetchAllProducts = catchAsync(async (req, res, next) => {
   res.status(200).json({
     success: true,
     message: 'Products fetched successfully',
-    results: products.length,
+    totalCount: totalCount,
+    pageSize: pageSize,
     products: products,
   });
 });
