@@ -5,14 +5,20 @@ const ApiFeatures = require('../helpers/ApiFeatures');
 
 exports.fetchAllProducts = catchAsync(async (req, res, next) => {
   const limit = req.query.limit;
+  const pageIndex = req.query.page * 1 || 1;
   const pageSize = !limit || limit * 1 > 12 ? 12 : limit;
-
-  const totalCount = await Product.countDocuments();
 
   const apiFeatures = new ApiFeatures(Product.find(), req.query)
     .search()
     .filter()
     .pagination(pageSize);
+
+  const countWithoutPagination = new ApiFeatures(Product.find(), req.query)
+    .search()
+    .filter();
+
+  const productsCount =
+    await countWithoutPagination.mongooseQuery.countDocuments();
 
   const products = await apiFeatures.mongooseQuery;
 
@@ -23,7 +29,8 @@ exports.fetchAllProducts = catchAsync(async (req, res, next) => {
   res.status(200).json({
     success: true,
     message: 'Products fetched successfully',
-    totalCount: totalCount,
+    productsCount: productsCount,
+    pageIndex: pageIndex,
     pageSize: pageSize,
     products: products,
   });
