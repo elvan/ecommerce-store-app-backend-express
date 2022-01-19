@@ -21,9 +21,9 @@ const productSchema = new mongoose.Schema(
       required: [true, 'Product description is required'],
       trim: true,
     },
-    brand: {
+    seller: {
       type: String,
-      required: [true, 'Product brand is required'],
+      required: [true, 'Product seller is required'],
       trim: true,
     },
     category: {

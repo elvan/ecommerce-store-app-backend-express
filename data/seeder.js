@@ -23,7 +23,7 @@ const seedProducts = async () => {
         name: faker.commerce.productName(),
         price: faker.commerce.price() * 1000,
         description: faker.lorem.paragraph(),
-        brand: faker.company.companyName(),
+        seller: faker.company.companyName(),
         category: faker.commerce.department(),
         quantityInStock: faker.datatype.number({ min: 1, max: 100 }),
         images: [
